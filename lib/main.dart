@@ -1,50 +1,49 @@
 import 'package:flutter/material.dart';
 
 // 메인함수가 실행할때 아무 값도 반환하지 않는다
-void main() => runApp(MyApp()); // runApp 이 호출될때마다 가지는 값 - runApp 함수의 ()에는 위젯이 들어간다
+void main() =>
+    runApp(MyApp()); // runApp 이 호출될때마다 가지는 값 - runApp 함수의 ()에는 위젯이 들어간다
+
 // 클래스 명은 앞글자가 대문자, 함수는 소문자
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-  @override 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'First app',
-      theme: ThemeData(
-        primarySwatch: Colors.blue
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({ Key? key }) : super(key: key);
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Column(
-            children: [
-              Text('First App'),
-            ],
-          )       
-        )
-
+        title: Text('Wolf'),
+        centerTitle: true,
+        backgroundColor: Colors.purple,
+        elevation: 0.0, //높이
       ),
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 0.0, 0.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center, //위젯들을 세로축으로 상단 중단 하단 정렬?
           children: [
-            Text('Hello11111'),
-            Text('Hello22222'),
-            Text('Hello33333'),
+            Text('hello'),
+            Text('hello'),
+            Text('hello'),
           ],
         ),
       ),
     );
   }
 }
+
 
 // Scaffold => 무언가를 혼자 해낼 수 있도록 발판을 주다. 웹화면의 빈 도화지 느낌
